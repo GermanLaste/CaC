@@ -1,0 +1,103 @@
+/* Estilos generales */
+body {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    background-color: #000000;
+    background-position: left top;
+    background-repeat: repeat-x;
+    color: #c4c4c4;
+    margin: 0 0 1px;
+    height: 100%;
+    line-height: 1.5;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Estilos para el header */
+  .header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+  .navbar ul li {
+    text-align: center;
+  }
+  
+  .navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+  }
+  
+  /* Estilos para el main */
+  .article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+  }
+  
+  .contenedorbienvenida {
+    grid-column: span 2;
+  }
+  
+  .contenedortops {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .contenedortops2 {
+    grid-column: span 2;
+  }
+  
+  .seccion1,
+  .seccion2,
+  .seccion3,
+  .seccion4,
+  .seccion5 {
+    background-color: #f4f4f4;
+    padding: 20px;
+    color: #333; /* Cambio de color de texto en secciones */
+  }
+  
+  .button {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+  
+  /* Media queries para hacer la página responsiva */
+  @media screen and (max-width: 768px) {
+    .navbar ul {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .article {
+      grid-template-columns: 1fr;
+    }
+  
+    .contenedortops {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+ 
+  
