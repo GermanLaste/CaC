@@ -1,37 +1,54 @@
-/* Estilos generales */
 body {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   font-size: 13px;
-  background-color: #171a21; 
+  background-color: #171a21;
   color: #c4c4c4;
-  margin: 0 0 1px;
-  height: 100%;
+  margin: 0;
   line-height: 1.5;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  /* Estilos para el header */
-  .header {
-    background-color: #1b2838; 
-    color: #fff;
-    padding: 10px 0;
-    display: grid;
-    grid-template-columns: auto 1fr; /* Primera columna para el navbar, el resto para otros elementos */
-    align-items: center; /* Centra verticalmente los elementos */
-  }
-  
-  /* Estilos para la barra de navegación */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Estilos para el contenedor del header */
+.header-container {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  background-color: #1b2838;
+  width: 100%;
+  position: fixed;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Estilos para el header */
+.header {
+  color: #fff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Estilos para el logo */
+.logo img {
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilos para la barra de navegación */
 .navbar ul {
   list-style-type: none;
+  margin: 0;
   padding: 0;
   display: flex;
-  justify-content: flex-end; /* Alinea los elementos a la derecha */
-  font-size: 20px;
+  gap: 15px;
+  font-size: 1.2rem;
 }
 
 .navbar ul li a {
@@ -45,65 +62,120 @@ body {
   color: rgb(191, 255, 0);
 }
 
+.nav-toggle-label {
+  display: none;
+  cursor: pointer;
+}
 
-  /* Estilos para el main */
-  .article {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    padding: 20px;
-    
+/* Estilos para el main */
+.article {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.contenedorbienvenida {
+  grid-column: span 2;
+  margin-top: 100px; /* Puedes ajustar este valor según sea necesario */
+}
+
+/* Estilos para el texto del mensaje de bienvenida */
+.contenedorbienvenida h1 {
+  font-size: 24px; /* Puedes ajustar el tamaño del texto */
+  margin-bottom: 20px; /* Espacio inferior para separar el texto */
+}
+
+.contenedortops {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.contenedortops2 {
+  grid-column: span 2;
+}
+
+.seccion1,
+.seccion2,
+.seccion3,
+.seccion4,
+.seccion5 {
+  background-color: #2c3e50;
+  padding: 20px;
+  color: #ecf0f1;
+}
+
+.button {
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+/* Media queries para hacer la página responsiva */
+@media screen and (max-width: 768px) {
+  /* Estilos para dispositivos móviles */
+  .navbar {
+    background-color: #1b2838;
+    text-align: center;
   }
-  
-  .contenedorbienvenida {
-    grid-column: span 2;
+
+  .navbar ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #1b2838;
+    text-align: center;
   }
-  
-  .contenedortops {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+
+  .navbar ul.active {
+    display: flex;
+    flex-direction: column;
   }
-  
-  .contenedortops2 {
-    grid-column: span 2;
+
+  .navbar ul li {
+    padding: 15px 0;
+    border-bottom: 1px solid #fff;
   }
-  
-  .seccion1,
-  .seccion2,
-  .seccion3,
-  .seccion4,
-  .seccion5 {
-    background-color: #2c3e50; 
-    padding: 20px;
-    color: #ecf0f1; 
+
+  .navbar ul li:last-child {
+    border-bottom: none;
   }
-  
-  .button {
-    background-color: #333;
+
+  .navbar ul li a {
+    padding: 10px 0;
+  }
+
+  .navbar .nav-toggle-label {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
     color: #fff;
-    padding: 5px 10px;
-    text-decoration: none;
+    font-size: 24px;
   }
-  
-  .button:hover {
-    background-color: #555;
+
+  #nav-toggle:checked + .nav-toggle-label {
+    display: block;
   }
-  
-  /* Media queries para hacer la página responsiva */
-  @media screen and (max-width: 768px) {
-    .navbar ul {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  
-    .article {
-      grid-template-columns: 1fr;
-    }
-  
-    .contenedortops {
-      grid-template-columns: repeat(2, 1fr);
-    }
+
+  #nav-toggle:checked + .nav-toggle-label + ul {
+    display: flex;
+    flex-direction: column;
   }
-  
- 
-  
+
+  .article {
+    grid-template-columns: 1fr;
+  }
+
+  .contenedortops {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
