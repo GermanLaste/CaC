@@ -17,10 +17,10 @@ body {
 .header-container {
   display: flex;
   justify-content: center; 
-  background-color: #1b2838;
   width: 100%;
   position: fixed;
   z-index: 1000; 
+  background: linear-gradient(to bottom, #334b68, #171a21);
 }
 
 /* Estilos para el header */
@@ -81,7 +81,8 @@ body {
 }
 img.banner1 {
   width: 100%; 
-  height: auto; 
+  height: auto;
+  box-shadow: 0 0 20px rgba(27, 40, 56, 1.5)
 }
 
 .contenedorbienvenida {
@@ -120,11 +121,14 @@ img.banner1 {
 .seccion3,
 .seccion4,
 .seccion5 {
-  background-color: #2c3e50;
+  background: linear-gradient(to bottom, #334b68, #171a21);;
   padding: 20px;
   color: #ecf0f1;
   border-radius: 5px;
   box-shadow: 0 0 20px rgba(27, 40, 56, 1.5);
+}
+.seccion5 {
+  background: linear-gradient(to top, #334b68, #171a21);;
 }
 .SistemaRanking{
   font-size: 20px;
